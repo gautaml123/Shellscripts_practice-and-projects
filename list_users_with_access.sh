@@ -1,7 +1,27 @@
 #!/bin/bash
 
 
+#########################################
 
+# About: This script prints the users with access to a repo in a github organisation.
+# Input: export username and password beforeexcuting the script. Also provide org naem and repo name as command line args
+
+# Author: Lokendra
+# Version: v2
+
+#########################################
+
+args="$(echo $#)"
+
+function usage {
+	expected_args=2
+	if [ "$args" -ne "$expected_args" ]; then
+		echo "usage: ./<script-name> <org-name> <repo-name>"
+		exit 
+	fi
+}
+
+usage
 
 # GitHub API URL
 API_URL="https://api.github.com"
